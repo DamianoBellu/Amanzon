@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { PRODOTTI } from '../Data/prodotti';
+//import { PRODOTTI } from '../Data/prodotti';
 import { Prodotto } from '../Models/prodotto';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 //Dependency Injection
 
@@ -9,10 +11,18 @@ import { Prodotto } from '../Models/prodotto';
 })
 export class ProdottiService {
 
-  constructor() { }
+  private baseUrl = "https://fakestoreapi.com"
+  constructor(private http:HttpClient) { }
 
-  getAll(): Prodotto[]{
-    return PRODOTTI;
+  getProducts(): Observable<Prodotto[]>{
+    return this.http.get<Prodotto[]>(`${this.baseUrl}/products`)
   }
 
+  getCategories(): Observable<string[]>{
+    return this.http.get<string[]>(`${this.baseUrl}/products/categories`)
+  }
+
+
 }
+
+ 

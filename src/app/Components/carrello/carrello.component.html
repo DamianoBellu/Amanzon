@@ -2,8 +2,7 @@
 <div class="list-group">
     <div *ngFor="let p of carrelloService.prodotti" class="list-group-item">
         {{p.title}} - {{p.qta}} - {{p.price * p.qta}}
-        <button type="button" class="btn btn-danger" (click)="carrelloService.rimuovi(p.id)">
-           <i class="bi bi-trash"></i>
+        <button type="button" class="btn btn-danger bi-trash" (click)="carrelloService.rimuovi(p.id)">
         </button>
     </div>
 </div>

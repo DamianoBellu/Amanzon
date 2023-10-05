@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,9 @@ import { ProdottoPreviewComponent } from './Components/prodotto-preview/prodotto
 import { CarrelloComponent } from './Components/carrello/carrello.component';
 import { CarrelloMiniComponent } from './Components/carrello-mini/carrello-mini.component';
 import { HeaderComponent } from './Components/header/header.component';
-
+import { CategorieSelettoreComponent } from './Components/categorie-selettore/categorie-selettore.component';
+import { HomeComponent } from './Components/home/home.component';
+import { ProdottoDetailComponent } from './Components/prodotto-detail/prodotto-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +19,15 @@ import { HeaderComponent } from './Components/header/header.component';
     ProdottoPreviewComponent,
     CarrelloComponent,
     CarrelloMiniComponent,
-    HeaderComponent
+    HeaderComponent,
+    CategorieSelettoreComponent,
+    HomeComponent,
+    ProdottoDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
